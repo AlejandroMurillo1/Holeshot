@@ -1,4 +1,4 @@
-package io.holeshot.core.domain.model.club;
+package io.holeshot.core.domain.model.test;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -6,9 +6,9 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Entity
-@Table(name = "payment_statuses")
+@Table(name = "test_types")
 @Data
-public class PaymentStatus {
+public class TestType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

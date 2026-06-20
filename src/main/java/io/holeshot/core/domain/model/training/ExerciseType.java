@@ -1,4 +1,4 @@
-package io.holeshot.core.domain.model.user;
+package io.holeshot.core.domain.model.training;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -9,12 +9,12 @@ import lombok.ToString;
 
 import java.util.List;
 
-@EqualsAndHashCode(exclude = "athletes")
-@ToString(exclude = "athletes")
+@EqualsAndHashCode(exclude = "exercises")
+@ToString(exclude = "exercises")
 @Entity
-@Table(name = "uci_categories")
+@Table(name = "exercise_types")
 @Data
-public class UciCategory {
+public class ExerciseType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,12 +24,6 @@ public class UciCategory {
     @Column(name = "name", nullable = false, unique = true, length = 50)
     private String name;
 
-    @Column(name = "min_age")
-    private Integer minAge;
-
-    @Column(name = "max_age")
-    private Integer maxAge;
-
-    @OneToMany(mappedBy = "uciCategory")
-    private List<UserProfile> athletes;
+    @OneToMany(mappedBy = "exerciseType")
+    private List<Exercise> exercises;
 }
