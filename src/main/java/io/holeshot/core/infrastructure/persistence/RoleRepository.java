@@ -1,9 +1,9 @@
 package io.holeshot.core.infrastructure.persistence;
 
-import io.holeshot.core.domain.model.training.RoutineAssignment;
+import io.holeshot.core.domain.model.club.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoutineAssignmentRepository extends JpaRepository<RoutineAssignment, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
 }
