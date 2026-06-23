@@ -22,8 +22,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
-@EqualsAndHashCode(callSuper = true, exclude = {"userProfile", "enrollments", "physicalMeasurements", "injuriesRecorded", "oneRmRecordsRegistered", "testsRecorded", "exercisesCreated", "routinesCreated", "routineAssignmentsAssigned"})
-@ToString(exclude = {"userProfile", "enrollments", "physicalMeasurements", "injuriesRecorded", "oneRmRecordsRegistered", "testsRecorded", "exercisesCreated", "routinesCreated", "routineAssignmentsAssigned"})
+@EqualsAndHashCode(callSuper = true, exclude = {"athleteProfile", "enrollments", "physicalMeasurements", "injuriesRecorded", "oneRmRecordsRegistered", "testsRecorded", "exercisesCreated", "routinesCreated", "routineAssignmentsAssigned"})
+@ToString(exclude = {"athleteProfile", "enrollments", "physicalMeasurements", "injuriesRecorded", "oneRmRecordsRegistered", "testsRecorded", "exercisesCreated", "routinesCreated", "routineAssignmentsAssigned"})
 @SQLRestriction(value = "deleted_at IS NULL")
 @Entity
 @Table(name = "users")
@@ -71,7 +71,7 @@ public class User extends Auditable {
 
     // Relationships
     @OneToOne(mappedBy = "user")
-    private UserProfile userProfile;
+    private AthleteProfile athleteProfile;
 
     @OneToMany(mappedBy = "user")
     @OrderBy("startDate ASC")

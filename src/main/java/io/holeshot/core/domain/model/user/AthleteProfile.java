@@ -18,14 +18,10 @@ import java.util.List;
 @Entity
 @Table(name = "user_profiles")
 @Data
-public class UserProfile extends Auditable {
+public class AthleteProfile extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "document_type", length = 20)
-    private DocumentType documentType;
 
     @Size(max = 500)
     @Column(name = "document_url", length = 500)

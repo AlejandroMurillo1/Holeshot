@@ -31,5 +31,5 @@ public class UciCategory {
     private Integer maxAge;
 
     @OneToMany(mappedBy = "uciCategory")
-    private List<UserProfile> athletes;
+    private List<AthleteProfile> athletes;
 }

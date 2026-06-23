@@ -3,7 +3,7 @@ package io.holeshot.core.domain.model.test;
 import io.holeshot.core.domain.model.shared.Auditable;
 import io.holeshot.core.domain.model.club.Club;
 import io.holeshot.core.domain.model.user.User;
-import io.holeshot.core.domain.model.user.UserProfile;
+import io.holeshot.core.domain.model.user.AthleteProfile;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,8 +14,8 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@EqualsAndHashCode(callSuper = true, exclude = {"userProfile", "club", "testType", "recordedBy", "timeTrial"})
-@ToString(exclude = {"userProfile", "club", "testType", "recordedBy", "timeTrial"})
+@EqualsAndHashCode(callSuper = true, exclude = {"athleteProfile", "club", "testType", "recordedBy", "timeTrial"})
+@ToString(exclude = {"athleteProfile", "club", "testType", "recordedBy", "timeTrial"})
 @Entity
 @Table(name = "tests")
 @Data
@@ -43,7 +43,7 @@ public class Test extends Auditable {
 
     @ManyToOne
     @JoinColumn(name = "user_profile_id", nullable = false)
-    private UserProfile userProfile;
+    private AthleteProfile athleteProfile;
 
     @ManyToOne
     @JoinColumn(name = "club_id", nullable = false)

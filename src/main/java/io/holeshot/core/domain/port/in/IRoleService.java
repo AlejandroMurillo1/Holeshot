@@ -1,5 +1,4 @@
 package io.holeshot.core.domain.port.in;
 
-public interface IRoutineService {
-
+public interface IRoleService {
 }

@@ -11,8 +11,8 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@EqualsAndHashCode(callSuper = true, exclude = "userProfile")
-@ToString(exclude = "userProfile")
+@EqualsAndHashCode(callSuper = true, exclude = "athleteProfile")
+@ToString(exclude = "athleteProfile")
 @Entity
 @Table(name = "insurances")
 @Data
@@ -45,5 +45,5 @@ public class Insurance extends Auditable {
 
     @OneToOne
     @JoinColumn(name = "user_profile_id", unique = true, nullable = false)
-    private UserProfile userProfile;
+    private AthleteProfile athleteProfile;
 }

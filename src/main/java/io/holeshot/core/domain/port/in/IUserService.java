@@ -1,14 +1,17 @@
 package io.holeshot.core.domain.port.in;
 
-import io.holeshot.core.domain.model.user.User;
+
+import io.holeshot.core.infrastructure.web.dtos.requests.CreateUserDTO;
+import io.holeshot.core.infrastructure.web.dtos.requests.UpdateUserDTO;
+import io.holeshot.core.infrastructure.web.dtos.responses.UserDetailDTO;
+
+import java.util.List;
 
 public interface IUserService {
-    void registerAthlete();
-    void registerCoach();
-    void getProfileById();
-    void getAll();
-    void updateAthlete();
-    void updatePhysicalMeasurements();
-    void registerInjury();
-    void getActiveInjuriesByAthlete();
+    UserDetailDTO createUser(CreateUserDTO dto);
+    UserDetailDTO updateUser(UpdateUserDTO dto);
+    void deleteUser(Long userId);
+    UserDetailDTO findUserById(Long userId);
+    List<UserDetailDTO> findUserByName(String name);
+
 }

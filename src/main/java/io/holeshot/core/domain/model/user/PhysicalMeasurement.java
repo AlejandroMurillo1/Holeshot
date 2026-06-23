@@ -9,8 +9,8 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@EqualsAndHashCode(callSuper = true, exclude = {"userProfile", "recordedBy"})
-@ToString(exclude = {"userProfile", "recordedBy"})
+@EqualsAndHashCode(callSuper = true, exclude = {"athleteProfile", "recordedBy"})
+@ToString(exclude = {"athleteProfile", "recordedBy"})
 @Entity
 @Table(name = "physical_measurements")
 @Data
@@ -33,7 +33,7 @@ public class PhysicalMeasurement extends Auditable {
 
     @ManyToOne
     @JoinColumn(name = "user_profile_id", nullable = false)
-    private UserProfile userProfile;
+    private AthleteProfile athleteProfile;
 
     @ManyToOne
     @JoinColumn(name = "recorded_by", nullable = false)

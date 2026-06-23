@@ -11,8 +11,8 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@EqualsAndHashCode(callSuper = true, exclude = {"userProfile", "uciCategory"})
-@ToString(exclude = {"userProfile", "uciCategory"})
+@EqualsAndHashCode(callSuper = true, exclude = {"athleteProfile", "uciCategory"})
+@ToString(exclude = {"athleteProfile", "uciCategory"})
 @Entity
 @Table(name = "uci_licenses")
 @Data
@@ -40,7 +40,7 @@ public class UciLicense extends Auditable {
 
     @OneToOne
     @JoinColumn(name = "user_profile_id", unique = true, nullable = false)
-    private UserProfile userProfile;
+    private AthleteProfile athleteProfile;
 
     @ManyToOne
     @JoinColumn(name = "uci_category_id", nullable = false)

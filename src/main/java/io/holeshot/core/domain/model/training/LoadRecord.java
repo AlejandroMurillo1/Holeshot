@@ -1,7 +1,7 @@
 package io.holeshot.core.domain.model.training;
 
 import io.holeshot.core.domain.model.shared.Auditable;
-import io.holeshot.core.domain.model.user.UserProfile;
+import io.holeshot.core.domain.model.user.AthleteProfile;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -50,5 +50,5 @@ public class LoadRecord extends Auditable {
 
     @ManyToOne
     @JoinColumn(name = "user_profile_id", nullable = false)
-    private UserProfile userProfile;
+    private AthleteProfile athleteProfile;
 }
