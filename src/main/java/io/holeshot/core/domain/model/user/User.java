@@ -12,9 +12,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
 
 import java.time.LocalDate;
@@ -28,6 +26,9 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

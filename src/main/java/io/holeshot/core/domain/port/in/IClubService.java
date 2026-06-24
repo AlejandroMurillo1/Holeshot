@@ -10,4 +10,10 @@ public interface IClubService {
     ClubDetailDTO findByName(String clubName);
     void deleteClub(Long clubId);
     ClubDetailDTO updateClub(UpdateClubDTO dto);
+
+    //Horarios / Sessions
+    // -> Registrar horario, Obtener horarios, Eliminar Horarios, Modificar horario.
+
+    // Miembros
+    // -> Obtener miembro por Id o Nombre, Obtener todos los miembros, Obtener miembros de preselección, etc.
 }
